@@ -1,15 +1,71 @@
-# This file is used for Git repositories to specify intentionally untracked files that Git should ignore. 
-# If you are not using git, you can delete this file. For more information see: https://git-scm.com/docs/gitignore
-# For useful gitignore templates see: https://github.com/github/gitignore
+# Excluded Managed Package Metadata
+# Still allows customization, but doesn't track unchangeable files
+# Add all installed managed packages to this list
+# Excluded Managed Packages - non editable components
 
-# Salesforce cache
-.sf/
+# Copado
+**/copado__*
+**/cmcSf__*
+
+# FinServ managed metadata
+**/FinServ__*
+
+# vlocity_ins managed metadata
+**/vlocity_ins__*
+
+# OIQ managed metadata
+**/OIQ__*
+
+# sf_com_apps managed metadata
+**/sf_com_apps__*
+
+# Salesforce Billing package
+**/blng__*
+
+# Marketing Cloud Connect
+**/et4ae5__*
+
+# Salesforce CPQ
+**/SBQQ__*
+
+# MyTrailhead Application
+**/trailheadapp__*
+
+# Lightning Web Components
+**/lwc/omniDesigner*
+**/lwc/omniscript*
+**/lwc/trailingDocuments*
+**/lwc/xom*
+
+# Excluded Metadata Types - Performance / Data-like
+#Documents are mostly created in Production and are not deployed between Sandboxes. You can safely ignore them in Git.
+#Reports and report types are mostly created in Production and are not deployed between Sandboxes. You can safely ignore them in Git.
+**/documents/*
+**/dashboards/*
+**/installedPackages/*
+**/reports/*
+**/staticresources/*
+force-app/main/default/staticresources/*
+**/translations/*
+**/objecttranslations/*
+
+# Certificates should not be part of the repository
+**/certs/*
+
+# Excluded Metadata Types - Security
+**/authprovider/*
+**/samlssoconfigs/*
+
+# Excluded Metadata Types - Obsolete as of API v44
+**/flowdefinitions/*
+
+# Default SFDX - Dreamhouse .gitignore content
+# Salesforce dev
 .sfdx/
 .localdevserver/
-deploy-options.json
 
 # LWC VSCode autocomplete
-**/lwc/jsconfig.json
+jsconfig.json
 
 # LWC Jest coverage reports
 coverage/
@@ -36,12 +92,10 @@ ehthumbs.db
 [Dd]esktop.ini
 $RECYCLE.BIN/
 
-# Local environment variables
-.env
-
-# Python Salesforce Functions
-**/__pycache__/
-**/.venv/
-**/venv/
-
-.copado
+# VS Code project settings
+.vscode/*
+!.vscode/extensions.json
+.pmdCache
+/scan_results.csv
+/quickstart.sh
+.copado/*
